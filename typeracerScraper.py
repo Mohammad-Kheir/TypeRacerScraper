@@ -11,7 +11,7 @@ class TypeRacerScraper:
         self.parsedSource = BeautifulSoup(self.source.content, "html.parser")
 
 
-    def get_url(self):
+    def parse_results(self):
         with open("source.html", "+w") as f:
             values = self.parsedSource.find("table", class_="scoresTable").find_all("tr")
             for value in values:
@@ -19,15 +19,9 @@ class TypeRacerScraper:
                     items = value.find_all("td")
                     for item in items:
                         f.write(item.string.strip() + ' ')
-                    
-                except Exception as e:
-                    print(e)
-
+                except:
+                    pass
                 f.write('------------\n')
 
 
-
-def quickTest():
-    pass
-
-TypeRacerScraper("not_not_mk", "1000").get_url()
+TypeRacerScraper("not_not_mk", "1000").parse_results()
