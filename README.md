@@ -1,2 +1,5 @@
-# TypeRacerScraper
-Given a username and quantity of scores. Will scrape and return a CSV of scores in type racer.
+# Typeracer scraper
+
+This is a simple example package. You can use
+[Github-flavored Markdown](https://github.com/Mohammad-Kheir/TypeRacerScraper)
+given a user id and a number of scores it will return list of scores.
