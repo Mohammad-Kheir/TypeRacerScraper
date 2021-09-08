@@ -1,5 +1,9 @@
-# Typeracer scraper
+# TypeRacerScraper
+Given a username and quantity of scores. Will scrape and return a CSV of scores in type racer.
 
-This is a simple example package. You can use
-[Github-flavored Markdown](https://github.com/Mohammad-Kheir/TypeRacerScraper)
-given a user id and a number of scores it will return list of scores.
+
+from typeracerScraper_package import typeracerScraper as t
+
+df = t.TypeRacerScraper("not_not_mk", "1000").result_dataframe()
+
+print(df)
