@@ -12,7 +12,7 @@ class TypeRacerScraper:
         self.parsedSource = BeautifulSoup(self.source.content, "html.parser")
 
 
-    def result_dataframe(self):
+    def result_json(self):
         race     = []
         speed    = []
         accuracy = []
@@ -36,9 +36,7 @@ class TypeRacerScraper:
              "Accuracy":accuracy, "Points": points
              ,"Place": place}
 
-        df = pd.DataFrame(data=d)
-        return df
+        df = pd.DataFrame(data=d).reset_index()
+        return df.to_json(orient="split")
 
 
-# df = TypeRacerScraper("not_not_mk", "1000").result_dataframe()
-# print(df)
